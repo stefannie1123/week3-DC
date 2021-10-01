@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container py-5">
+        <div class="card">
+          <div class="card-header text-light bg-primary d-md-flex">
+              <h5 class="text-white m-2">{{title}}</h5>
+              <div class="ms-auto">
+                <button class="btn-light btn-sm m-1" (click)="filterGender('Female')">F</button>
+                <button class="btn-light btn-sm m-1" (click)="filterGender('Male')">M</button>
+                <button class="btn-light btn-sm m-1" (click)="showAll()">A</button>
+              </div>
+            
+          </div>
+      
+          <div class="card-body">
+            <div class="container">
+              <table class="table table-condensed">
+                <tbody>
+                  <tr *ngFor="let participant of display">
+                    <td class="">{{participant.name}}</td>
+                    <!-- <td class="text-sm badge bg-secondary ">{{participant.age}}</td> -->
+                    <td>
+                        <span class="badge bg-info d-grid gap-2">{{ participant.age }}</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+      
+        </div>
+      </div>
+</body>
+</html>
